@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-10">
+            <h1>Phone Book</h1>
+            <hr>
+            <app-add-contact (contactAdded)="onNewContactAdded($event)"></app-add-contact>
+            <div class="row row-cols-1 row-cols-md-6 g-3">
+                <app-contact-list-item *ngFor="let contact of contacts" 
+                [contact]="contact" 
+                (contactDeleted)="onDeleteContact($event)" 
+                (contactUpdated)="onUpdateContact($event)">
+                </app-contact-list-item>
+            </div>
+        </div>
+    </div>
+</div>
+
+

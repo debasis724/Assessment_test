@@ -1,0 +1,11 @@
+.contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: 10px;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 123, 255, 0.5); /* Adds a glowing effect */
+    border: 1px solid rgba(0, 123, 255, 0.8); /* Adds a glowing border */
+  }

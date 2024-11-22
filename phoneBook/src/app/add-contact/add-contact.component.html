@@ -1,0 +1,55 @@
+<div class="container my-3">
+    <form [formGroup]="addContactForm" (ngSubmit)="onAddContact()">
+      <div class="row g-3 align-items-center">
+        <!-- Name Field -->
+        <div class="col-md-5">
+          <label for="name" class="form-label visually-hidden">Name</label>
+          <input
+            id="name"
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            formControlName="name"
+            [class.is-invalid]="addContactForm.get('name')?.invalid && addContactForm.get('name')?.touched"
+          />
+          <div
+            *ngIf="addContactForm.get('name')?.invalid && addContactForm.get('name')?.touched"
+            class="invalid-feedback"
+          >
+            Name is required and must be at least 3 characters long.
+          </div>
+        </div>
+  
+        <!-- Phone Number Field -->
+        <div class="col-md-5">
+          <label for="phone" class="form-label visually-hidden">Phone</label>
+          <input
+            id="phone"
+            type="text"
+            class="form-control"
+            placeholder="Phone number"
+            formControlName="phone"
+            [class.is-invalid]="addContactForm.get('phone')?.invalid && addContactForm.get('phone')?.touched"
+          />
+          <div
+            *ngIf="addContactForm.get('phone')?.invalid && addContactForm.get('phone')?.touched"
+            class="invalid-feedback"
+          >
+            Please enter a valid phone number (10 digits).
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="col-md-2">
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            [disabled]="addContactForm.invalid"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
